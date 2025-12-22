@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # my_app
+=======
+# simple_calculator
+>>>>>>> 5215955 (wrqkdc)
 
 A new Flutter project.
 

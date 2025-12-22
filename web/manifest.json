@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "my_app",
     "short_name": "my_app",
+=======
+    "name": "simple_calculator",
+    "short_name": "simple_calculator",
+>>>>>>> 5215955 (wrqkdc)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
