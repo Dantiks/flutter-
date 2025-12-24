@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import 'dart:math';
 >>>>>>> 5215955 (wrqkdc)
+=======
+import 'dart:math';
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
 
 void main() {
   runApp(const QuizApp());
@@ -16,6 +20,7 @@ class QuizApp extends StatelessWidget {
     return MaterialApp(
 <<<<<<< HEAD
       title: 'Викторина',
+<<<<<<< HEAD
       theme: ThemeData(primarySwatch: Colors.purple, fontFamily: 'Roboto'),
       home: const QuizScreen(),
 =======
@@ -23,23 +28,31 @@ class QuizApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.deepPurple, fontFamily: 'Roboto'),
       home: const StartScreen(),
 >>>>>>> 5215955 (wrqkdc)
+=======
+      theme: ThemeData(primarySwatch: Colors.grey, fontFamily: 'Roboto'),
+      home: const StartScreen(),
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Question {
   final String text;
   final List<Answer> answers;
   final int correctIndex;
 =======
+=======
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -111,6 +124,73 @@ class StartScreen extends StatelessWidget {
                 ),
               ],
             ),
+=======
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 140,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white, width: 3),
+                ),
+                child: const Icon(Icons.quiz, size: 80, color: Colors.black),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'ВИКТОРИНА',
+                style: TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 4,
+                ),
+              ),
+              const SizedBox(height: 15),
+              const Text(
+                'Проверьте свои знания',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.grey,
+                  letterSpacing: 1,
+                ),
+              ),
+              const SizedBox(height: 80),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const QuizScreen()),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 70,
+                    vertical: 22,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
+                  child: const Text(
+                    'НАЧАТЬ',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
           ),
         ),
       ),
@@ -133,6 +213,7 @@ class Question {
   });
 }
 
+<<<<<<< HEAD
 class Answer {
   final String text;
   final Color color;
@@ -147,6 +228,8 @@ class Answer {
 }
 
 >>>>>>> 5215955 (wrqkdc)
+=======
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
 
@@ -167,61 +250,53 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
 
   final List<Question> questions = [
     Question(
-      text: 'Какая планета самая большая в Солнечной системе?',
-      answers: [
-        Answer(text: 'Марс', color: Colors.red, icon: Icons.circle),
-        Answer(text: 'Юпитер', color: Colors.blue, icon: Icons.square),
-        Answer(
-          text: 'Сатурн',
-          color: Colors.orange,
-          icon: Icons.change_history,
-        ),
-        Answer(text: 'Нептун', color: Colors.green, icon: Icons.star),
-      ],
+      text: 'Какой год считается началом Второй мировой войны?',
+      answers: ['1937', '1939', '1941', '1945'],
       correctIndex: 1,
     ),
     Question(
-      text: 'Сколько континентов на Земле?',
-      answers: [
-        Answer(text: '5', color: Colors.red, icon: Icons.circle),
-        Answer(text: '6', color: Colors.blue, icon: Icons.square),
-        Answer(text: '7', color: Colors.orange, icon: Icons.change_history),
-        Answer(text: '8', color: Colors.green, icon: Icons.star),
-      ],
-      correctIndex: 2,
+      text: 'Какая самая длинная река в мире?',
+      answers: ['Амазонка', 'Нил', 'Миссисипи', 'Янцзы'],
+      correctIndex: 1,
     ),
     Question(
-      text: 'Какой язык программирования использует Flutter?',
-      answers: [
-        Answer(text: 'Java', color: Colors.red, icon: Icons.circle),
-        Answer(text: 'Python', color: Colors.blue, icon: Icons.square),
-        Answer(text: 'Dart', color: Colors.orange, icon: Icons.change_history),
-        Answer(text: 'JavaScript', color: Colors.green, icon: Icons.star),
-      ],
+      text: 'Сколько костей в теле взрослого человека?',
+      answers: ['186', '206', '226', '246'],
+      correctIndex: 1,
+    ),
+    Question(
+      text: 'Кто изобрел телефон?',
+      answers: ['Эдисон', 'Белл', 'Тесла', 'Маркони'],
+      correctIndex: 1,
+    ),
+    Question(
+      text: 'Какая планета самая большая в Солнечной системе?',
+      answers: ['Сатурн', 'Нептун', 'Юпитер', 'Уран'],
       correctIndex: 2,
     ),
     Question(
       text: 'В каком году был основан Google?',
-      answers: [
-        Answer(text: '1996', color: Colors.red, icon: Icons.circle),
-        Answer(text: '1998', color: Colors.blue, icon: Icons.square),
-        Answer(text: '2000', color: Colors.orange, icon: Icons.change_history),
-        Answer(text: '2002', color: Colors.green, icon: Icons.star),
-      ],
+      answers: ['1996', '1998', '2000', '2002'],
       correctIndex: 1,
     ),
     Question(
-      text: 'Какое животное самое быстрое на суше?',
-      answers: [
-        Answer(text: 'Лев', color: Colors.red, icon: Icons.circle),
-        Answer(text: 'Гепард', color: Colors.blue, icon: Icons.square),
-        Answer(
-          text: 'Антилопа',
-          color: Colors.orange,
-          icon: Icons.change_history,
-        ),
-        Answer(text: 'Конь', color: Colors.green, icon: Icons.star),
-      ],
+      text: 'Какой элемент имеет атомный номер 1?',
+      answers: ['Гелий', 'Водород', 'Литий', 'Углерод'],
+      correctIndex: 1,
+    ),
+    Question(
+      text: 'Кто написал "Мастер и Маргарита"?',
+      answers: ['Пастернак', 'Булгаков', 'Набоков', 'Солженицын'],
+      correctIndex: 1,
+    ),
+    Question(
+      text: 'Сколько континентов на Земле?',
+      answers: ['5', '6', '7', '8'],
+      correctIndex: 2,
+    ),
+    Question(
+      text: 'Какая скорость света в вакууме?',
+      answers: ['200 000 км/с', '300 000 км/с', '400 000 км/с', '500 000 км/с'],
       correctIndex: 1,
     ),
   ];
@@ -327,6 +402,7 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
       answered = true;
       selectedAnswer = index;
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (index == questions[currentQuestion].correctIndex) {
         score++;
       }
@@ -345,6 +421,15 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
 
     Future.delayed(const Duration(milliseconds: 1500), () {
 >>>>>>> 5215955 (wrqkdc)
+=======
+    });
+
+    if (index == questions[currentQuestion].correctIndex) {
+      score++;
+    }
+
+    Future.delayed(const Duration(milliseconds: 1200), () {
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
       if (currentQuestion < questions.length - 1) {
         setState(() {
           currentQuestion++;
@@ -353,8 +438,11 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
         });
       } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
         showResultDialog();
 =======
+=======
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -362,11 +450,15 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
                 ResultScreen(score: score, total: questions.length),
           ),
         );
+<<<<<<< HEAD
 >>>>>>> 5215955 (wrqkdc)
+=======
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
       }
     });
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   void showResultDialog() {
     showDialog(
@@ -397,6 +489,8 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
     );
   }
 
+=======
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
   @override
   Widget build(BuildContext context) {
     final question = questions[currentQuestion];
@@ -413,6 +507,7 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
 >>>>>>> 5215955 (wrqkdc)
 
     return Scaffold(
+<<<<<<< HEAD
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -532,48 +627,122 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
                         color: Colors.black.withOpacity(0.2),
                         blurRadius: 10,
                         offset: const Offset(0, 5),
+=======
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Colors.white, width: 1),
+                ),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Вопрос ${currentQuestion + 1}/${questions.length}',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            'Счёт: ',
+                            style: TextStyle(color: Colors.grey, fontSize: 16),
+                          ),
+                          Text(
+                            '$score',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
                       ),
                     ],
                   ),
-                  child: Text(
-                    question.text,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                  const SizedBox(height: 15),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(2),
+                    child: LinearProgressIndicator(
+                      value: (currentQuestion + 1) / questions.length,
+                      backgroundColor: Colors.grey.shade800,
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Colors.white,
+                      ),
+                      minHeight: 4,
                     ),
-                    textAlign: TextAlign.center,
                   ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 60),
+
+            // Question
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(35),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text(
+                  question.text,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                    height: 1.4,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
+            ),
 
-              const SizedBox(height: 20),
+            const SizedBox(height: 50),
 
-              // Answer Buttons
-              Expanded(
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(20),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
-                    childAspectRatio: 1.2,
-                  ),
+            // Answers
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: ListView.builder(
                   itemCount: question.answers.length,
                   itemBuilder: (context, index) {
-                    final answer = question.answers[index];
                     final isCorrect = index == question.correctIndex;
                     final isSelected = selectedAnswer == index;
 
-                    Color buttonColor = answer.color;
+                    Color bgColor = Colors.black;
+                    Color borderColor = Colors.white;
+                    Color textColor = Colors.white;
+
                     if (answered) {
                       if (isCorrect) {
-                        buttonColor = Colors.green;
+                        bgColor = Colors.white;
+                        textColor = Colors.black;
+                        borderColor = Colors.white;
                       } else if (isSelected) {
-                        buttonColor = Colors.red;
+                        bgColor = Colors.black;
+                        borderColor = Colors.grey.shade700;
+                        textColor = Colors.grey.shade700;
                       }
                     }
 
+<<<<<<< HEAD
                     return GestureDetector(
                       onTap: () => checkAnswer(index),
                       child: Container(
@@ -630,9 +799,43 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
+=======
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
+                      child: GestureDetector(
+                        onTap: () => checkAnswer(index),
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: bgColor,
+                            border: Border.all(color: borderColor, width: 2),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 35,
+                                height: 35,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: textColor,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(2),
                                 ),
-                                textAlign: TextAlign.center,
+                                child: Center(
+                                  child: Text(
+                                    String.fromCharCode(65 + index),
+                                    style: TextStyle(
+                                      color: textColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
+                                ),
                               ),
+<<<<<<< HEAD
 =======
                           children: [
                             Text(
@@ -652,6 +855,25 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
 >>>>>>> 5215955 (wrqkdc)
                             ),
                           ],
+=======
+                              const SizedBox(width: 20),
+                              Expanded(
+                                child: Text(
+                                  question.answers[index],
+                                  style: TextStyle(
+                                    color: textColor,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                              if (answered && isCorrect)
+                                Icon(Icons.check, color: textColor, size: 28),
+                              if (answered && isSelected && !isCorrect)
+                                Icon(Icons.close, color: textColor, size: 28),
+                            ],
+                          ),
+>>>>>>> 125d340 (Обновлен дизайн: черно-белая тема и новые вопросы)
                         ),
                       ),
 <<<<<<< HEAD
@@ -749,7 +971,155 @@ class _QuizScreenState extends State<QuizScreen> with TickerProviderStateMixin {
 >>>>>>> 5215955 (wrqkdc)
                 ),
               ),
-            ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ResultScreen extends StatelessWidget {
+  final int score;
+  final int total;
+
+  const ResultScreen({Key? key, required this.score, required this.total})
+    : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final percentage = (score / total * 100).round();
+    String message;
+
+    if (percentage >= 90) {
+      message = 'ПРЕВОСХОДНО';
+    } else if (percentage >= 70) {
+      message = 'ХОРОШО';
+    } else if (percentage >= 50) {
+      message = 'НЕПЛОХО';
+    } else {
+      message = 'ПОПРОБУЙТЕ ЕЩЁ';
+    }
+
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 3),
+                  ),
+                  child: const Icon(
+                    Icons.emoji_events_outlined,
+                    size: 60,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                Text(
+                  message,
+                  style: const TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 3,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 50),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(40),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white, width: 2),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Column(
+                    children: [
+                      const Text(
+                        'ВАШ РЕЗУЛЬТАТ',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            '$score',
+                            style: const TextStyle(
+                              fontSize: 70,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            ' / $total',
+                            style: const TextStyle(
+                              fontSize: 35,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 15),
+                      Text(
+                        '$percentage%',
+                        style: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 60),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const StartScreen(),
+                      ),
+                      (route) => false,
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 60,
+                      vertical: 20,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: const Text(
+                      'ЗАНОВО',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
